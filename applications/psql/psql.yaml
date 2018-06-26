@@ -24,10 +24,10 @@ infrastructure:
         instance_type: t2.medium
 
   connectivity:
-    # Port 3306 will be opened internally to receive database requests
+    # Port 5432 will be opened internally to receive database requests
     internal:
       - port_info:
-          port: 3306
+          port: 5432
 
 source:
   os_type: linux
@@ -43,7 +43,7 @@ configuration:
   # The initialization script is intended to install
   # app prerequisite and initialize the OS
   # This script installs postgres on a clean Amazon Linux AMI,
-  # sets up a root account and creates an empty database
+  # sets up a default account and creates an empty database
   # for the application
   initialization:
     script: psql.sh
