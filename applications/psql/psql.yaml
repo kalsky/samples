@@ -60,4 +60,4 @@ configuration:
   # the ports are available
   healthcheck:
     wait_for_ports: ALL
-    timeout: 180
+    timeout: 10
