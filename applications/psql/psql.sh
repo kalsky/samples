@@ -26,7 +26,13 @@
 sudo apt update
 sudo apt install postgresql postgresql-contrib -y
 
+#Use MD5 Authentication
+sudo sed -i.bak -e 's/ident$/md5/' -e 's/peer$/md5/' /etc/postgresql/9.5/main/pg_hba.conf
+sudo service postgresql restart
+
 #sudo su postgres
 sudo -u postgres createuser -s $(whoami); createdb $(whoami)
-sudo psql postgres -c "ALTER USER postgres WITH PASSWORD '$DB_PASS';"
-sudo psql postgres -c "CREATE DATABASE $DB_NAME";
+sudo PGPASSWORD=$DB_PASS psql -U postgres -c "ALTER USER postgres WITH PASSWORD '$DB_PASS';"
+sudo PGPASSWORD=$DB_PASS psql -U postgres -c "CREATE DATABASE $DB_NAME";
+
+sudo PGPASSWORD=$DB_PASS psql postgres -d $DB_NAME -c "CREATE TABLE tickets(id serial primary key,author VARCHAR(15),subject VARCHAR(50),issue VARCHAR(255),chatUrl VARCHAR(255),createdAt VARCHAR(100),archive BOOLEAN,status BOOLEAN)"
