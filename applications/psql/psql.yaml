@@ -28,6 +28,9 @@ infrastructure:
     internal:
       - port_info:
           port: 5432
+    extenral:
+      - port_info:
+          port: 22
 
 source:
   os_type: linux
