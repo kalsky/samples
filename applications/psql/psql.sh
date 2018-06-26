@@ -29,19 +29,19 @@ echo "****************************************************************"
 sudo apt update
 sudo apt install postgresql postgresql-contrib -y
 
-# echo "****************************************************************"
-# echo "Setting user"
-# echo "****************************************************************"
-# sudo -u postgres createuser -s $(whoami); createdb $(whoami)
-# sudo -u postgres -c "ALTER USER postgres WITH PASSWORD '$DB_PASS';"
-#
-# echo "****************************************************************"
-# echo "Use MD5 Authentication"
-# echo "****************************************************************"
-# sudo sed -i.bak -e 's/ident$/md5/' -e 's/peer$/md5/' /etc/postgresql/9.5/main/pg_hba.conf
-# sudo service postgresql restart
-#
-#
+echo "****************************************************************"
+echo "Setting user"
+echo "****************************************************************"
+sudo -u postgres createuser -s $(whoami); createdb $(whoami)
+sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD '$DB_PASS';"
+
+echo "****************************************************************"
+echo "Use MD5 Authentication"
+echo "****************************************************************"
+sudo sed -i.bak -e 's/ident$/md5/' -e 's/peer$/md5/' /etc/postgresql/9.5/main/pg_hba.conf
+sudo service postgresql restart
+
+
 # echo "****************************************************************"
 # echo "Create db and table"
 # echo "****************************************************************"
