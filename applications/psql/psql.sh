@@ -26,7 +26,7 @@
 sudo apt update
 sudo apt install postgresql postgresql-contrib -y
 
-sudo -i -u postgres
+sudo su postgres
 psql
 
 ALTER USER postgres WITH PASSWORD '$DB_PASS';
