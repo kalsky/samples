@@ -14,6 +14,7 @@
 echo "*****************************************"
 echo " Installing PostgreSQL"
 echo "*****************************************"
+sudo yum update
 sudo yum -y install postgresql postgresql-server postgresql-devel postgresql-contrib postgresql-docs
 sudo service postgresql initdb
 # Use MD5 Authentication
