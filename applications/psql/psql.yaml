@@ -25,7 +25,7 @@ infrastructure:
 
   connectivity:
     # Port 5432 will be opened internally to receive database requests
-    internal:
+    external:
       - port_info:
           port: 5432
 

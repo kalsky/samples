@@ -28,8 +28,5 @@ sudo apt install postgresql postgresql-contrib -y
 
 #sudo su postgres
 sudo -u postgres createuser -s $(whoami); createdb $(whoami)
-psql
-
-ALTER USER postgres WITH PASSWORD '$DB_PASS';
-CREATE DATABASE $DB_NAME;
-\q
+sudo psql postgres -c "ALTER USER postgres WITH PASSWORD '$DB_PASS';"
+sudo psql postgres -c "CREATE DATABASE $DB_NAME";
