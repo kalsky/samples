@@ -39,6 +39,8 @@ echo "****************************************************************"
 echo "Use MD5 Authentication"
 echo "****************************************************************"
 sudo sed -i.bak -e 's/ident$/md5/' -e 's/peer$/md5/' /etc/postgresql/9.5/main/pg_hba.conf
+sudo sed -i.bak -e "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" /etc/postgresql/9.5/main/postgresql.conf
+
 sudo service postgresql restart
 
 
