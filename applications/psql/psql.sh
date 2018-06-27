@@ -42,10 +42,9 @@ sudo sed -i.bak -e 's/ident$/md5/' -e 's/peer$/md5/' /etc/postgresql/9.5/main/pg
 sudo service postgresql restart
 
 
-# echo "****************************************************************"
-# echo "Create db and table"
-# echo "****************************************************************"
-# export PGPASSWORD=$DB_PASS
-# sudo psql -U postgres -c "CREATE DATABASE $DB_NAME";
-#
-# sudo psql -U postgres -d $DB_NAME -c "CREATE TABLE tickets(id serial primary key,author VARCHAR(15),subject VARCHAR(50),issue VARCHAR(255),chatUrl VARCHAR(255),createdAt VARCHAR(100),archive BOOLEAN,status BOOLEAN)"
+echo "****************************************************************"
+echo "Create db and table"
+echo "****************************************************************"
+sudo PGPASSWORD=$DB_PASS psql -U postgres -c "CREATE DATABASE $DB_NAME";
+
+sudo PGPASSWORD=$DB_PASS psql -U postgres -d $DB_NAME -c "CREATE TABLE tickets(id serial primary key,author VARCHAR(15),subject VARCHAR(50),issue VARCHAR(255),chatUrl VARCHAR(255),createdAt VARCHAR(100),archive BOOLEAN,status BOOLEAN)"
