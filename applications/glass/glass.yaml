@@ -27,17 +27,18 @@ source:
       username: adminuser
 
 configuration:
-  # The initialization script is intended to install
-  # app prerequisite and initialize the OS
-  # This script installs wordpress on a clean Ubuntu OS.
   initialization:
-    command: >
-      apt-get update
+    script: init.sh      
   # This command restarts the Apache server after the initialization completes
   start:
     command: >
       echo 'Start nginx service'
+      service nginx stop
+      service nginx start
   # To validate the installation, we wait to see that the ports are available
   healthcheck:
     wait_for_ports: ALL
     timeout: 180
+
+debugging: 
+  connection_protocol: SSH
