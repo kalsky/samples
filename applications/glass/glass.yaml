@@ -33,8 +33,8 @@ configuration:
   start:
     command: >
       echo 'Start nginx service'
-      service nginx stop
-      service nginx start
+      sudo service nginx stop
+      sudo service nginx start
   # To validate the installation, we wait to see that the ports are available
   healthcheck:
     wait_for_ports: ALL
