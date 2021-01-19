@@ -8,7 +8,7 @@ inputs:
 infrastructure:
   compute:
     spec:
-      Azure:
+      azure:
         vm_size: $AZURE_VM_SIZE
 
   # Port 80 will be opened externally to receive web requests

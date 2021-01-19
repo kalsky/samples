@@ -5,7 +5,7 @@ metadata:
     glass-website
     
 clouds: 
-  - azure: westus2
+  - Azure: westus2
   
 # artifacts:
 #   - promotions-manager-ui: artifacts/latest/promotions-manager-ui.master.tar.gz
