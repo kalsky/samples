@@ -28,13 +28,10 @@ source:
 
 configuration:
   initialization:
-    script: init.sh      
+    script: init.sh
   # This command restarts the Apache server after the initialization completes
   start:
-    command: >
-      echo 'Start nginx service'
-      sudo service nginx stop
-      sudo service nginx start
+    script: start.sh
   # To validate the installation, we wait to see that the ports are available
   healthcheck:
     wait_for_ports: ALL
