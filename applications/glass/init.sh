@@ -12,7 +12,7 @@ cat << EOF > ./default
 server {
 listen 80 default_server;
 listen [::]:80 default_server;
-root /var/www/promotions-manager;
+root /var/www/website;
 server_name _;
 index index.html index.htm;
 location /api {   
