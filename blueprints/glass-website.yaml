@@ -1,21 +1,18 @@
-spec_version: 1
-kind: blueprint
-metadata:
-  description: >
-    glass-website
-    
-clouds: 
-  - Azure: westus2
-  
+applications:
+- glass:
+    input_values:
+    - PORT: $PORT
+    - AZURE_VM_SIZE: $AZURE_VM_SIZE
+clouds:
+- Azure: westus2
+debugging:
+  availability: true
 inputs:
 - PORT: 80
 - AZURE_VM_SIZE: Standard_B1s
+kind: blueprint
+metadata:
+  description: 'glass-website
 
-applications:
-  - glass:
-      input_values:
-        - PORT: $PORT
-        - AZURE_VM_SIZE: $AZURE_VM_SIZE
-
-debugging:
-  availability: on
+    '
+spec_version: 1
