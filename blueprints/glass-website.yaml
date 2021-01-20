@@ -1,4 +1,18 @@
-"applications:\n- glass:\n    input_values:\n    - PORT: $PORT\n    - AZURE_VM_SIZE:\
-  \ $AZURE_VM_SIZE\nclouds:\n- Azure: westus2\ndebugging:\n  availability: on\ninputs:\n\
-  - PORT: 80\n- AZURE_VM_SIZE: Standard_B1s\nkind: blueprint\nmetadata:\n  description:\
-  \ 'glass-website\n\n    '\nspec_version: 1\n"
+applications:
+- glass:
+    input_values:
+    - PORT: $PORT
+    - AZURE_VM_SIZE: $AZURE_VM_SIZE
+clouds:
+- Azure: westus2
+debugging:
+  availability: on
+inputs:
+- PORT: 80
+- AZURE_VM_SIZE: Standard_B1s
+kind: blueprint
+metadata:
+  description: 'glass-website
+
+    '
+spec_version: 1
