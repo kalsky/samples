@@ -7,9 +7,6 @@ clouds:
 - Azure: westus2
 debugging:
   availability: on
-default_inputs:
-- PORT: 80
-- AZURE_VM_SIZE: Standard_B1s
 kind: blueprint
 metadata:
   description: 'glass-website
