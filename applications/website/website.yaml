@@ -1,6 +1,6 @@
 configuration:
   healthcheck:
-    timeout: 181
+    timeout: 180
     wait_for_ports: ALL
   initialization:
     script: init.sh

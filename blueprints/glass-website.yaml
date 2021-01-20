@@ -7,7 +7,7 @@ clouds:
 - Azure: westus2
 debugging:
   availability: on
-inputs:
+default_inputs:
 - PORT: 80
 - AZURE_VM_SIZE: Standard_B1s
 kind: blueprint
