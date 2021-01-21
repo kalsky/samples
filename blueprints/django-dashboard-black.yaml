@@ -1,0 +1,15 @@
+applications:
+- ddb-app:
+    input_values:
+    - PORT: 80
+    - AZURE_VM_SIZE: Standard_B1s
+clouds:
+- Azure: westus2
+debugging:
+  availability: on
+kind: blueprint
+metadata:
+  description: 'django dashboard black
+
+    '
+spec_version: 1
