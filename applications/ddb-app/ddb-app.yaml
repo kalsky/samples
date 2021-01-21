@@ -1,6 +1,6 @@
 configuration:
   healthcheck:
-    timeout: 180
+    timeout: 30
     wait_for_ports: ALL
   initialization:
     script: init.sh
@@ -24,7 +24,7 @@ kind: application
 source:
   image:
     azure_image:
-    - urn: Canonical:UbuntuServer:18.04-LTS:latest
+    - urn: cognosys:centos-8-2-free:centos-8-2-free:1.2019.0810
       username: adminuser
   os_type: linux
 spec_version: 1
