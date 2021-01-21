@@ -19,7 +19,7 @@ infrastructure:
         port: $PORT
 inputs:
 - PORT: 80
-- AZURE_VM_SIZE: Standard_B2s
+- AZURE_VM_SIZE: Standard_B1s
 kind: application
 source:
   image:
