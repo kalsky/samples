@@ -1,15 +1,15 @@
 applications:
-- glass:
+- glass-app:
     input_values:
     - PORT: 80
     - AZURE_VM_SIZE: Standard_B1s
 clouds:
 - Azure: westus2
 debugging:
-  availability: on
+  availability: off
 kind: blueprint
 metadata:
-  description: 'django dashboard black
+  description: 'glass-website
 
     '
 spec_version: 1
