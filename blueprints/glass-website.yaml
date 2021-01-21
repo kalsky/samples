@@ -6,10 +6,10 @@ applications:
 clouds:
 - Azure: westus2
 debugging:
-  availability: off
+  availability: on
 kind: blueprint
 metadata:
-  description: 'glass-website
+  description: 'django dashboard black
 
     '
 spec_version: 1

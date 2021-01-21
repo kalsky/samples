@@ -1,3 +1,3 @@
-'#!/bin/bash service nginx stop service nginx start
+'#!/bin/bash sudo python manage.py runserver 80
 
   '
