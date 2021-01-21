@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo python manage.py runserver 80
+sudo python3 manage.py runserver 80
