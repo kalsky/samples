@@ -1,11 +1,9 @@
 #!/bin/bash
-sudo apt-get update
-sudo apt-get -y install python3-pip
 sudo pip3 install --upgrade pip
-sudo apt install sqlite3
+sudo dnf install sqlite git -y
 sudo mkdir /var/www
 sudo mkdir /var/www/ddb
-git clone https://github.com/kalsky/django-dashboard-black --depth 1 --branch=master /var/www/ddb
+sudo git clone https://github.com/kalsky/django-dashboard-black --depth 1 --branch=master /var/www/ddb
 cd /var/www/ddb
 echo "ALLOWED_HOSTS.append('*')" | sudo tee -a core/settings.py
 sudo sqlite3 db.sqlite3 "VACUUM;"
