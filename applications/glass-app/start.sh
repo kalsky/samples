@@ -1,7 +1,3 @@
-'#!/bin/bash
-
-  service nginx stop
-
-  service nginx start
-
-  '
+#!/bin/bash
+service nginx stop
+service nginx start
