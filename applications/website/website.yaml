@@ -24,7 +24,7 @@ kind: application
 source:
   image:
     azure_image:
-    - urn: Canonical:UbuntuServer:18.04-LTS:latest
+    - urn: Canonical:UbuntuServer:16.04-LTS:latest
       username: adminuser
   os_type: linux
 spec_version: 1

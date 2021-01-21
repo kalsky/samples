@@ -6,7 +6,7 @@ applications:
 clouds:
 - Azure: westus2
 debugging:
-  availability: on
+  availability: off
 kind: blueprint
 metadata:
   description: 'glass-website
