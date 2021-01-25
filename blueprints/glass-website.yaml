@@ -1,0 +1,15 @@
+applications:
+- glass-app:
+    input_values:
+    - PORT: 80
+    - AZURE_VM_SIZE: Standard_B1s
+clouds:
+- Azure: westus2
+debugging:
+  availability: off
+kind: blueprint
+metadata:
+  description: 'glass-website
+
+    '
+spec_version: 1
