@@ -2,7 +2,7 @@
 ![logo](logo.png)
 ![BuildStatus](http://tc.quali.com/app/rest/builds/aggregated/strob:(buildType:(id:Colony_Samples_ValidateSamples))/statusIcon.svg)
 
-# CloudShell Colony Samples
+## CloudShell Colony Samples
 
 Sample Blueprints and Applications demonstrating CloudShell Colony's various features and providing a reference for several sample architectures.
 
