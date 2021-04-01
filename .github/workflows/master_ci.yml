@@ -20,7 +20,7 @@ jobs:
       with:
         format: 'csv'
     - name: Colony validate blueprints
-      uses: QualiSystemsLab/colony-validate-bp-action@v0.0.1
+      uses: kalsky/colony-validate-bp-action@master
       with:
         space: Trial
         fileslist: ${{ steps.files.outputs.added_modified  }}
