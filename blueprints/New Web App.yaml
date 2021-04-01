@@ -35,9 +35,9 @@ inputs:
 applications:
   - psql:  # One instance of mysql (see: applications/mysql/mysql.yaml)
       input_values:
-        - DB_USER: $DB_USER  # Assign values from the app inputs
-        - DB_PASS: $DB_PASS
-        - DB_NAME: $DB_NAME
+        - DB_USER1: $DB_USER  # Assign values from the app inputs
+        - DB_PASS1: $DB_PASS
+        - DB_NAME1: $DB_NAME
   # One instance of java-spring-website
   # (see: applications/java-spring-website/java-spring-website.yaml)
   # - java-spring-website:
