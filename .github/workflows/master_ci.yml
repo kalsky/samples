@@ -26,9 +26,9 @@ jobs:
         fileslist: ${{ steps.files.outputs.added_modified  }}
         colony_token: ${{ secrets.COLONY_TOKEN }}
     - name: Start sandbox
+      id: start-sandbox
       uses: QualiSystemsLab/colony-start-sb-action@master
       with:
-        id: start-sandbox
         space: Trial
         blueprint_name: django-dashboard-black
         sandbox_name: django-dashboard-black sandbox
