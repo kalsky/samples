@@ -23,19 +23,19 @@ jobs:
       uses: QualiSystemsLab/colony-validate-bp-action@v0.0.1
       with:
         space: Trial
-        fileslist: ${{ steps.files.outputs.added_modified  }}
+        files_list: ${{ steps.files.outputs.added_modified  }}
         colony_token: ${{ secrets.COLONY_TOKEN }}
     - name: Start sandbox
       id: start-sandbox
       uses: QualiSystemsLab/colony-start-sb-action@master
       with:
         space: Trial
-        blueprint_name: django-dashboard-black
-        sandbox_name: django-dashboard-black sandbox
+        blueprint_name: empty-bp-empty-app
+        sandbox_name: empty-bp-empty-app sandbox
         colony_token: ${{ secrets.COLONY_TOKEN }}
     - name: Stop sandbox
       uses: QualiSystemsLab/colony-end-sb-action@master
       with:
         space: Trial
-        sandbox_id: ${{ steps.start-sandbox.outputs.sandbox-id }}
+        sandbox_id: ${{ steps.start-sandbox.outputs.sandbox_id }}
         colony_token: ${{ secrets.COLONY_TOKEN }}
