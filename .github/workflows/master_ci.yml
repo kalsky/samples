@@ -28,6 +28,7 @@ jobs:
     - name: Start sandbox
       uses: QualiSystemsLab/colony-start-sb-action@master
       with:
+        id: start-sandbox
         space: Trial
         blueprint_name: django-dashboard-black
         sandbox_name: django-dashboard-black sandbox
