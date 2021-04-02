@@ -3,8 +3,8 @@ on:
   push:
     branches:
       - master
-    pull_request:
-      branches:
+  pull_request:
+    branches:
       - master
 
 jobs:
@@ -24,4 +24,11 @@ jobs:
       with:
         space: Trial
         fileslist: ${{ steps.files.outputs.added_modified  }}
+        colony_token: ${{ secrets.COLONY_TOKEN }}
+    - name: Start sandbox
+      uses: QualiSystemsLab/colony-start-sb-action@master
+      with:
+        space: Trial
+        blueprint_name: django-dashboard-black
+        sandbox_name: django-dashboard-black sandbox
         colony_token: ${{ secrets.COLONY_TOKEN }}
