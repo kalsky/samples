@@ -32,3 +32,9 @@ jobs:
         blueprint_name: django-dashboard-black
         sandbox_name: django-dashboard-black sandbox
         colony_token: ${{ secrets.COLONY_TOKEN }}
+    - name: Stop sandbox
+      uses: QualiSystemsLab/colony-end-sb-action@master
+      with:
+        space: Trial
+        sandbox_id: ${{ steps.start-sandbox.outputs.sandbox-id }}
+        colony_token: ${{ secrets.COLONY_TOKEN }}
