@@ -8,7 +8,7 @@ on:
       - master
 
 jobs:
-  build:
+  validate:
 
     runs-on: ubuntu-latest
 
@@ -25,6 +25,20 @@ jobs:
         space: Trial
         files_list: ${{ steps.files.outputs.added_modified  }}
         colony_token: ${{ secrets.COLONY_TOKEN }}
+  jobA:
+    needs: validate
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Sleep for 10s
+      uses: juliangruber/sleep-action@v1
+      with:
+        time: 40s
+  jobB:
+    needs: validate
+    runs-on: ubuntu-latest
+
+    steps:
     - name: Start sandbox
       id: start-sandbox
       uses: QualiSystemsLab/colony-start-sb-action@master
@@ -33,7 +47,12 @@ jobs:
         blueprint_name: empty-bp-empty-app
         sandbox_name: empty-bp-empty-app sandbox
         colony_token: ${{ secrets.COLONY_TOKEN }}
-    - name: Stop sandbox
+  finish-all:
+    needs: [jobA, jobB]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Stop sandbox
       uses: QualiSystemsLab/colony-end-sb-action@master
       with:
         space: Trial
