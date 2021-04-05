@@ -47,6 +47,8 @@ jobs:
         blueprint_name: empty-bp-empty-app
         sandbox_name: empty-bp-empty-app sandbox
         colony_token: ${{ secrets.COLONY_TOKEN }}
+      outputs:
+        sandbox_id: ${{ steps.start-sandbox.outputs.sandbox_id }}
   finish-all:
     needs: [jobA, jobB]
     runs-on: ubuntu-latest
@@ -56,5 +58,5 @@ jobs:
       uses: QualiSystemsLab/colony-end-sb-action@master
       with:
         space: Trial
-        sandbox_id: ${{ steps.start-sandbox.outputs.sandbox_id }}
+        sandbox_id: ${{needs.jobB.outputs.sandbox_id}}
         colony_token: ${{ secrets.COLONY_TOKEN }}
