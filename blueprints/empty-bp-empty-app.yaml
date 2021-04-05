@@ -1,5 +1,5 @@
 applications:
-- ddb-app:
+- empty-app:
     input_values:
     - AZURE_VM_SIZE: Standard_B1s
 clouds:

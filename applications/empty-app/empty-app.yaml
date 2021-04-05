@@ -21,7 +21,7 @@ kind: application
 source:
   image:
     azure_image:
-    - urn: Canonical:UbuntuServer:18.04-LTS:latest
+    - urn: clear-linux-project:clear-linux-os:basic:32980.0.0
       username: adminuser
   os_type: linux
 spec_version: 1
