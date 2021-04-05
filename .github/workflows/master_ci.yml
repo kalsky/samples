@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Stop sandbox
+    - name: Stop sandbox
       uses: QualiSystemsLab/colony-end-sb-action@master
       with:
         space: Trial
