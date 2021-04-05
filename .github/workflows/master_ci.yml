@@ -41,12 +41,16 @@ jobs:
     steps:
     - name: Start sandbox
       id: start-sandbox
-      uses: QualiSystemsLab/colony-start-sb-action@master
+      uses: QualiSystemsLab/colony-start-sb-action@dev
       with:
         space: Trial
         blueprint_name: empty-bp-empty-app
         sandbox_name: empty-bp-empty-app sandbox
         colony_token: ${{ secrets.COLONY_TOKEN }}
+        branch: master
+        duration: 30
+        timeout: 28
+        
     outputs:
       sandbox_id: ${{ steps.start-sandbox.outputs.sandbox_id }}
   finish-all:
