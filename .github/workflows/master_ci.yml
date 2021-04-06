@@ -41,7 +41,7 @@ jobs:
     steps:
     - name: Start sandbox
       id: start-sandbox
-      uses: QualiSystemsLab/colony-start-sb-action@master
+      uses: QualiSystemsLab/colony-start-sb-action@dev
       with:
         space: Trial
         blueprint_name: empty-bp-empty-app
