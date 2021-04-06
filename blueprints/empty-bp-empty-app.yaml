@@ -1,7 +1,8 @@
 applications:
-- empty-app:
+- ddb-app:
     input_values:
-    - AZURE_VM_SIZE: Standard_B1s
+    - PORT: 80
+    - AZURE_VM_SIZE: Standard_D2a_v4
 clouds:
 - Azure: westus2
 debugging:
