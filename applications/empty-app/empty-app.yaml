@@ -14,8 +14,9 @@ infrastructure:
   connectivity:
     external:
     - web:
-        port: 80
+        port: $PORT
 inputs:
+- PORT: 80
 - AZURE_VM_SIZE: Standard_B1s
 kind: application
 source:
