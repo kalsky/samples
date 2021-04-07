@@ -1,5 +1,5 @@
 applications:
-- ddb-app:
+- empty-vm:
     input_values:
     - PORT: 80
     - AZURE_VM_SIZE: Standard_D2a_v4
