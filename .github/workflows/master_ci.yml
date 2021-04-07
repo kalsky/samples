@@ -59,7 +59,7 @@ jobs:
 
     steps:
     - name: Stop sandbox
-      uses: QualiSystemsLab/colony-end-sb-action@master
+      uses: QualiSystemsLab/colony-end-sb-action@dev
       with:
         space: Trial
         sandbox_id: ${{needs.jobB.outputs.sandbox_id}}
