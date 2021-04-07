@@ -1,5 +1,5 @@
 applications:
-- empty-vm:
+- empty-app:
     input_values:
     - PORT: 80
     - AZURE_VM_SIZE: Standard_D2a_v4
