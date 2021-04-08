@@ -50,6 +50,13 @@ jobs:
         branch: master
         duration: 30
         timeout: 28
+    - name: End sandbox on failures
+      if: steps.start-sandbox.outcome == 'failure'
+      uses: QualiSystemsLab/colony-end-sb-action@dev
+      with:
+        space: Trial
+        sandbox_id: ${{needs.jobB.outputs.sandbox_id}}
+        colony_token: ${{ secrets.COLONY_TOKEN }}
 
     outputs:
       sandbox_id: ${{ steps.start-sandbox.outputs.sandbox_id }}
