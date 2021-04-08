@@ -22,7 +22,7 @@ kind: application
 source:
   image:
     azure_image:
-    - urn: clear-linux-project:clear-linux-os:basic:32980.0.0
+    - urn: clear-linux-project:clear-linux-os:basic:32980.0.0x
       username: adminuser
   os_type: linux
 spec_version: 1
