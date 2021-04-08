@@ -51,7 +51,7 @@ jobs:
         duration: 30
         timeout: 28
     - name: End sandbox on failure
-      if: ${{ steps.start-sandbox.outcome }} == 'failure'
+      if: steps.start-sandbox.outputs.exit_status != 0
       uses: QualiSystemsLab/colony-end-sb-action@dev
       with:
         space: Trial
