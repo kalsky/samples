@@ -5,6 +5,7 @@ configuration:
   initialization:
     script: empty.sh
 debugging:
+  allow_direct_access: true
   connection_protocol: SSH
 infrastructure:
   compute:
@@ -13,8 +14,12 @@ infrastructure:
         vm_size: $AZURE_VM_SIZE
   connectivity:
     external:
-    - web:
-        port: $PORT
+      port_info:
+        port3: 80
+    internal:
+      port_info:
+        port-range: asdf, asdf
+    
 inputs:
 - PORT: 80
 - AZURE_VM_SIZE: Standard_B1s
@@ -22,7 +27,7 @@ kind: application
 source:
   image:
     azure_image:
-    - urn: clear-linux-project:clear-linux-os:basic:32980.0.0
-      username: adminuser
+      urn: clear-linux-project:clear-linux-os:basic:32980.0.0
+      username: adminuser    
   os_type: linux
 spec_version: 1
