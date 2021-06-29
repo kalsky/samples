@@ -14,7 +14,7 @@ applications:
 #         - DB_NAME: a
 
 services:
-  # - empty-app
+  - empty-app
   
   - service1:
       input_values:
