@@ -1,30 +1,18 @@
 applications:
-  # - website:
-  #     instances: 1
-  #     input_values:
-  #     - PORT: 80
-  #     - AZURE_VM_SIZE: Standard_B1s
-  
-  - empty-app:
-      instances: 1
-
-# services:
-#   - empty-app:
-#       input_values:
-#         - DB_NAME: a
+  - empty-app
 
 services:
   - empty-app
   
-  - service1:
-      input_values:
-        - MANAGED_IDENTITY: ${colony.environment.id}/${INPUT1}
-        - DB_NAME: c
-        - DB_USER: d
-        - DB_PASS: d
-        - SANDBOX_ID: $colony.environment.id
-      depends_on:
-        - empty-app
+  # - service1:
+  #     input_values:
+  #       - MANAGED_IDENTITY: ${colony.environment.id}/${INPUT1}
+  #       - DB_NAME: c
+  #       - DB_USER: d
+  #       - DB_PASS: d
+  #       - SANDBOX_ID: $colony.environment.id
+  #     depends_on:
+  #       - empty-app
 
 # artifacts:
 #   - empty-app: sdfsdf
