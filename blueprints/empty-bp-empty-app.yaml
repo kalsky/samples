@@ -1,8 +1,8 @@
 applications:
   - empty-app
 
-services:
-  - empty-app
+# services:
+#   - empty-app
   
   # - service1:
   #     input_values:
