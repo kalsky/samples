@@ -16,12 +16,16 @@ infrastructure:
     spec:
       aws:
         instance_type: t2.medium
+      kubernetes:
+        cpu: "200m"
+        ram: "64Mi"
 
   connectivity:
     external:
       # Port 3000 will be opened externally to receive web requests
       - port_info:
-          port: 3000
+          port: 80
+      
 
 source:
   os_type: linux

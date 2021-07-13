@@ -10,7 +10,7 @@ configuration:
     command: ls
 debugging:
   # allow_direct_access: true
-  connection_protocol: ssh
+  connection_protocol: SSH
 # infrastructure:
   # compute:
   #   spec:
@@ -44,23 +44,26 @@ infrastructure:
     external:
     - ssh_port:
         port: 22
-        path: ''
     - web_port:
         port: 80
-        path: ''
     internal:
     - internal_port_info:
         port: 7001
-        path: ''
 
 inputs:
 - PORT: 80
 - AZURE_VM_SIZE: Standard_B1s
+- MANDATORY_INPUT
+- MANDATORY_INPUT2
+
+outputs:
+- OUTPUT1
+- output2
 kind: application
 source:
   image:
     ami:
-      - id: ssss
+      - id: ssssa
         region: aaaa
     azure_image:
       - urn: Canonical:UbuntuServer:18.04-LTS:latest

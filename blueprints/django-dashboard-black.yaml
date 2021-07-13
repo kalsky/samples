@@ -4,11 +4,11 @@ applications:
     - PORT: 80
     - AZURE_VM_SIZE: Standard_D2a_v4
 clouds:
-- Azure: westus2
+  - Azure: westus2
 debugging:
-  availability: off
+  bastion_availability: enabled-off
 ingress:
-  enable: false
+  enabled: false
 kind: blueprint
 metadata:
   description: 'django dashboard black

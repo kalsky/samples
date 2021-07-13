@@ -8,10 +8,10 @@ kind: application
 
 # These inputs are used by the initialization script,
 # to set up a database administrator account
-inputs:
-  - DB_USER
-  - DB_PASS
-  - DB_NAME
+# inputs:
+#   - DB_USER
+#   - DB_PASS
+#   - DB_NAME
 
 # This section defines the infrastructure requirements
 # for the application

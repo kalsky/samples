@@ -1,0 +1,11 @@
+definitions:
+  services:
+    aa:
+      image: aaaaa
+      memory: 3333
+      variables:
+        var1: aaaaa
+        var2: aafsdf
+pipelines:
+  a:
+  

@@ -1,9 +1,46 @@
 applications:
-  - empty-app
+  - empty-app:
+      instances: 1
+      input_values:
+        - PORT: 90
+        - MANDATORY_INPUT: 34
+        - MANDATORY_INPUT2: 34
 
-# services:
-#   - empty-app
+
   
+  # - empty-app:
+  #     instances: 1
+  
+  # - empty-app
+  - mysql:
+      input_values:
+        - AAAA: a
+
+  - rails-website:
+      input_values:
+        - DB_USER: $colony.applications.empty-app.outputs.output2
+        - DB_NAME: $INPUT2
+        - DB_PASS: $colony.services.service1.outputs.pass
+        - AA: a
+      depends_on:
+        - service1
+        - service2
+
+
+services:
+  - service1
+  - service2:
+      input_values:
+        - AAA: $INPUT4
+  # - empty-app
+
+
+  
+#   - empty-app:
+#       input_values:
+#         - DB_NAME: 123
+
+
   # - service1:
   #     input_values:
   #       - MANAGED_IDENTITY: ${colony.environment.id}/${INPUT1}
@@ -14,17 +51,23 @@ applications:
   #     depends_on:
   #       - empty-app
 
-# artifacts:
-#   - empty-app: sdfsdf
-#   - java-spring-website
-#   - aaaaa: sdfsdfsdf
+artifacts:
+  - empty-app: $INPUT2
+  - java-spring-website
+  - aaaaa: sdfsdfsdf
+  - aaaaa: $INPUT3
+  - aaaaa
   
 
 inputs:
   - INPUT1
   - INPUT2
+  - INPUT2
+  - INPUT3
+  - INPUT4
+
 clouds:
-- Azure: westus2
+- Azure: uswest2
 # debugging:
   # bastion_availability: enabled-on
 
@@ -46,4 +89,5 @@ clouds:
 kind: blueprint
 metadata:
   description: 'empty vm'
+
 spec_version: 1

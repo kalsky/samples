@@ -7,19 +7,22 @@ configuration:
   start:
     script: start.sh
 debugging:
-  connection_protocol: SSH
+  allow_direct_access: true
+  connection_protocol: RDP
+
 infrastructure:
   compute:
     spec:
-      azure:
-        vm_size: $AZURE_VM_SIZE
+      azure: 
+        vm_size: $PORT
   connectivity:
     external:
-    - web:
-        port: $PORT
+    - port_info:
+        port: 1233
 inputs:
 - PORT: 80
 - AZURE_VM_SIZE: Standard_B1s
+
 kind: application
 source:
   image:
@@ -27,4 +30,5 @@ source:
     - urn: Canonical:UbuntuServer:18.04-LTS:latest
       username: adminuser
   os_type: linux
+
 spec_version: 1

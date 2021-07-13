@@ -39,6 +39,7 @@ applications:
         - DB_USER: $DB_USER  # Assign values from the app inputs
         - DB_PASS: $DB_PASS
         - DB_NAME: $DB_NAME
+
   # One instance of java-spring-website
   # (see: applications/java-spring-website/java-spring-website.yaml)
   - java-spring-website:

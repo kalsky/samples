@@ -30,6 +30,9 @@ infrastructure:
       # Port 3000 will be opened externally to receive web requests
       - port_info:
           port: 3000
+    internal:
+      - port_info:
+          port: 3020
 
 source:
   os_type: linux
@@ -56,3 +59,6 @@ configuration:
   healthcheck:
     wait_for_ports: ALL
     timeout: 500
+
+outputs:
+  - output2
